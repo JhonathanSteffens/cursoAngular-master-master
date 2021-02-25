@@ -1,9 +1,9 @@
 <!--Mostrar a imagem, titulo e mensagem do anuncio-->
-<div class="card mb-2" style="background: #a9a9a9">
-  <img class="card-img-top img-thumbnail" [src]="anuncio?.urlImagem" [alt]="anuncio?.titulo" style= "heigth: 400px">
+<div class="card mb-2" style="background: darkgrey">
+  <img [src]="anuncio.urlImagem" class="card-img-top img-thumbnail" alt="{{anuncio.titulo}}" style="height: 400px">
   <div class="card-body">
-    <h5 class="card-title">{{anuncio?.titulo}}</h5>
-    <p class="card-text">{{anuncio?.mensagem}}</p>
-    <a href="a/add/{{anuncio?.id}}" class="btn btn-primary">Vizualizar</a>
+    <h5 class="card-title">{{anuncio.titulo}}</h5>
+    <p class="card-text">{{anuncio.mensagem}}</p>
+    <a href="a/ud/{{anuncio.id}}" class="btn btn-primary nav-link">Visualizar</a>
   </div>
 </div>

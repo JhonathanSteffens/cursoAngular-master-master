@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Anuncio} from '../anuncio/anuncio';
 import {ActivatedRoute} from "@angular/router";
 
@@ -8,6 +8,7 @@ import {ActivatedRoute} from "@angular/router";
   styleUrls: ['./anuncio-list.component.scss']
 })
 export class AnuncioListComponent implements OnInit {
+  @Input() filter: string;
   anuncios: Anuncio[];
   constructor(private activatedRouter: ActivatedRoute) {
   }
