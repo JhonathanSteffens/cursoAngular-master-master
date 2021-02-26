@@ -1,0 +1,15 @@
+<app-navbar (filterOutput)="receberFilter($event)"></app-navbar>
+
+<p *ngIf="!usuarios.length">Não possui Usuários</p>
+<ol class="list-unstyled">
+  <li>
+
+    <div *ngFor="let usuario of usuarios">
+      <div class="row">
+        <div class="col-4 card-usuario">
+          <app-usuario [usuario]= usuario ></app-usuario>
+        </div>
+      </div>
+    </div>
+  </li>
+</ol>

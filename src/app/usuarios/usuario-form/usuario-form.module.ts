@@ -1,20 +1,19 @@
 import {NgModule} from '@angular/core';
+import {UsuarioFormComponent} from './usuario-form.component';
 import {CommonModule} from '@angular/common';
 import {ReactiveFormsModule} from '@angular/forms';
-
-import {AnuncioFormComponent} from './anuncio-form.component';
-import {VmessageModule} from '../../vmessage/vmessage.module';
 import {NavbarModule} from "../../navbar/navbar.module";
+import {VmessageModule} from "../../vmessage/vmessage.module";
 
 @NgModule({
-  declarations: [ AnuncioFormComponent ],
+  declarations: [ UsuarioFormComponent ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    VmessageModule,
-    NavbarModule
+    NavbarModule,
+    VmessageModule
   ]
 })
 
-export class AnuncioFormModule {
+export class UsuarioFormModule {
 }

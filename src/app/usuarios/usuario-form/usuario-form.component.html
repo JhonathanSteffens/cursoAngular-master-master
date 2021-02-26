@@ -1,0 +1,76 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <form [formGroup]="usuarioForm" class="row" (submit)="salvarUsuario()">
+    <div class="col-6">
+      <div class="card">
+        <h5 *ngIf="!cadastro" class="titulo-cadastro">Cadastro de Um Novo Usuário</h5>
+       <h5 *ngIf="cadastro" class="titulo-cadastro">Edição do Usuário</h5>
+        <div class="card-body">
+          <div class="card-body">
+            <label style="display: block">Nome: </label>
+            <input class="form-control" type="text" formControlName="nome" placeholder="Nome"/>
+          </div>
+
+          <div class="card-body">
+            <label style="display: block">Email: </label>
+            <input class="form-control" type="email" formControlName="email" placeholder="Email"/>
+          </div>
+
+          <div class="card-body">
+            <label style="display: block">Senha: </label>
+            <input class="form-control" type="password" formControlName="senha" placeholder="Senha"/>
+          </div>
+          <div class="text-center">
+            <button [disabled]="usuarioForm.invalid" type="submit" class="btn btn-primary btn-block">Salvar</button>
+            <a href="u/list" class="btn btn-secondary text-center">Cancelar</a>
+            <app-vmessage *ngIf="usuarioForm.get('nome')?.errors?.required" [text]="'Os campos não devem estar vazios'" class="text-center"></app-vmessage>
+          </div>
+          <div class="col-12 text-center">
+            <i *ngIf="usuario.id" aria-hidden="true" class="fa fa-trash col-1 fa-2x mt-3"
+               title="remover" (click)="deletarUsuario()"
+            ></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+<!--    </div>-->
+<!--    <div class="col-6">-->
+<!--      <div class="card mt-5">-->
+<!--        <div class="card-body">-->
+<!--          <label class="mb-3">Título</label>-->
+<!--          <textarea-->
+<!--            style="resize: none;"-->
+<!--            formControlName="titulo"-->
+<!--            class="form-control mb-3"-->
+<!--            placeholder="Título">-->
+<!--      </textarea>-->
+<!--          <app-vmessage *ngIf="anuncioForm.get('titulo')?.errors?.minlength || anuncioForm.get('titulo')?.errors?.maxlength" [text]="'O título deve conter no mínimo 3 caracteres e no máximo 50 caracteres'"></app-vmessage>-->
+<!--          <label class="mt-5 mb-3">Mensagem</label>-->
+<!--          <textarea-->
+<!--            style="resize: none;"-->
+<!--            formControlName="mensagem"-->
+<!--            class="form-control"-->
+<!--            placeholder="Mensagem">-->
+<!--      </textarea>-->
+<!--          <app-vmessage *ngIf="anuncioForm.get('mensagem')?.errors?.minlength || anuncioForm.get('mensagem')?.errors?.maxlength" [text]="'A mensagem deve conter no mínimo 3 caracteres e no máximo 300 caracteres'"></app-vmessage>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="text-center col-12">-->
+<!--      <button [disabled]="anuncioForm.invalid" type="submit" class="btn btn-primary btn-block mt-3 mr-3">-->
+<!--        Salvar-->
+<!--      </button>-->
+<!--      <a href="a/list" class="btn btn-secondary text-center mt-3 ml-3">Cancelar</a>-->
+<!--      <app-vmessage *ngIf="anuncioForm.get('mensagem')?.errors?.required" [text]="'Os campos não devem estar vazios'" class="text-center"></app-vmessage>-->
+<!--    </div>-->
+<!--  </form>-->
+<!--  <div class="col-12 text-center">-->
+<!--    <i *ngIf="anuncio.id" aria-hidden="true" class="fa fa-trash col-1 fa-2x mt-3"-->
+<!--       title="remover" (click)="deletarAnuncio()"-->
+<!--    ></i>-->
+<!--  </div>-->
+<!--</div>-->

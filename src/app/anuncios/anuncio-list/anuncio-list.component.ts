@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Anuncio} from '../anuncio/anuncio';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-anuncio-list',
